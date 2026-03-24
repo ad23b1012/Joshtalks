@@ -323,31 +323,7 @@ def propose_fixes() -> List[Dict]:
 
 # ─── Fix Implementation (Q1g) — Number Normalization ────────────────────────
 
-def normalize_numbers_in_text(text: str) -> str:
-    """
-    Bidirectional number normalization:
-    Convert isolated digits to Hindi words and vice versa.
-    
-    Used as a post-processor to reduce WER from number format mismatches.
-    """
-    # Hindi digit words for 0-9
-    digit_to_hindi = {
-        '0': 'शून्य', '1': 'एक', '2': 'दो', '3': 'तीन', '4': 'चार',
-        '5': 'पांच', '6': 'छह', '7': 'सात', '8': 'आठ', '9': 'नौ',
-        '10': 'दस', '11': 'ग्यारह', '12': 'बारह', '13': 'तेरह',
-        '14': 'चौदह', '15': 'पंद्रह', '16': 'सोलह', '17': 'सत्रह',
-        '18': 'अठारह', '19': 'उन्नीस', '20': 'बीस', '25': 'पच्चीस',
-        '30': 'तीस', '40': 'चालीस', '50': 'पचास', '100': 'सौ',
-        '1000': 'हज़ार',
-    }
-    
-    # Replace isolated numbers with Hindi words
-    def replace_number(match):
-        num = match.group()
-        return digit_to_hindi.get(num, num)
-    
-    normalized = re.sub(r'\b\d{1,4}\b', replace_number, text)
-    return normalized
+from src.number_normalizer import normalize_hindi_numbers as normalize_numbers_in_text
 
 
 def evaluate_fix(predictions_csv: str) -> pd.DataFrame:

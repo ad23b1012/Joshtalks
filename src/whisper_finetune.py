@@ -98,7 +98,7 @@ def get_training_args(output_dir: str = None) -> Seq2SeqTrainingArguments:
         weight_decay=0.01,
         
         # Evaluation & saving
-        evaluation_strategy="steps",
+        eval_strategy="steps",
         eval_steps=EVAL_STEPS,
         save_steps=SAVE_STEPS,
         save_total_limit=3,
@@ -150,7 +150,7 @@ def load_model_and_processor():
     model.generation_config.language = LANGUAGE
     model.generation_config.task = TASK
     model.generation_config.forced_decoder_ids = None
-    model.config.suppress_tokens = []
+    model.generation_config.suppress_tokens = []
     
     # Count parameters
     total_params = sum(p.numel() for p in model.parameters())
@@ -213,7 +213,7 @@ def create_trainer(
         eval_dataset=eval_dataset,
         data_collator=data_collator,
         compute_metrics=compute_metrics,
-        tokenizer=processor.feature_extractor,
+        processing_class=processor.feature_extractor,
     )
     
     return trainer

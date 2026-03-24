@@ -44,7 +44,7 @@ def load_fleurs_test() -> "Dataset":
     """
     logger.info(f"Loading FLEURS {FLEURS_LANGUAGE} {FLEURS_SPLIT} split...")
     
-    fleurs = load_dataset(FLEURS_DATASET, FLEURS_LANGUAGE, split=FLEURS_SPLIT)
+    fleurs = load_dataset(FLEURS_DATASET, FLEURS_LANGUAGE, split=FLEURS_SPLIT, trust_remote_code=True)
     fleurs = fleurs.cast_column("audio", Audio(sampling_rate=SAMPLE_RATE))
     
     logger.info(f"Loaded {len(fleurs)} test samples from FLEURS")

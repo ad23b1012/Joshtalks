@@ -124,8 +124,8 @@ print(f"Train: {len(train_dataset)} | Eval: {len(eval_dataset)}")
 from src.evaluation import evaluate_on_fleurs
 
 # Evaluate both pretrained baseline and fine-tuned model
-# report = evaluate_on_fleurs()
-# print(report.to_markdown(index=False))
+report = evaluate_on_fleurs()
+print(report.to_markdown(index=False))
 
 # %% [markdown]
 # ## 1d-e. Error Analysis & Taxonomy
@@ -137,15 +137,15 @@ from src.error_analysis import (
 )
 
 # Sample 25 errors systematically
-# sampled = sample_errors("reports/q1_predictions.csv")
-# taxonomy = build_error_taxonomy(sampled)
-# 
-# print("Error Taxonomy:")
-# for category, examples in taxonomy.items():
-#     print(f"\n  {category} ({len(examples)} examples)")
-#     for ex in examples[:2]:
-#         print(f"    Ref:  {ex['reference'][:60]}...")
-#         print(f"    Pred: {ex['prediction'][:60]}...")
+sampled = sample_errors("reports/q1_predictions.csv")
+taxonomy = build_error_taxonomy(sampled)
+
+print("Error Taxonomy:")
+for category, examples in taxonomy.items():
+    print(f"\n  {category} ({len(examples)} examples)")
+    for ex in examples[:2]:
+        print(f"    Ref:  {ex['reference'][:60]}...")
+        print(f"    Pred: {ex['prediction'][:60]}...")
 
 # %% [markdown]
 # ## 1f. Proposed Fixes
@@ -161,9 +161,9 @@ for fix in fixes:
 # ## 1g. Implemented Fix — Number Normalization
 
 # %%
-# fix_results = evaluate_fix("reports/q1_predictions.csv")
-# print(fix_results.to_markdown(index=False))
+fix_results = evaluate_fix("reports/q1_predictions.csv")
+print(fix_results.to_markdown(index=False))
 
 # Generate complete report
-# generate_error_report(sampled, taxonomy, fixes, fix_results)
+generate_error_report(sampled, taxonomy, fixes, fix_results)
 print("\nQ1 pipeline ready. Uncomment training calls to run on GPU.")

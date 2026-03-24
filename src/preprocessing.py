@@ -177,9 +177,15 @@ def build_hf_dataset(manifest: pd.DataFrame) -> Dataset:
     
     logger.info(f"Processed {len(records)} segments, skipped {skipped}")
     
-    # Create HF Dataset
-    dataset = Dataset.from_list(records)
-    dataset = dataset.cast_column('audio', Audio(sampling_rate=SAMPLE_RATE))
+    # Create HF Dataset — avoid cast_column which requires torchcodec/FFmpeg
+    # The audio data is already in the correct format (dict with array + sampling_rate)
+    features = Features({
+        'audio': Audio(sampling_rate=SAMPLE_RATE),
+        'text': Value('string'),
+        'recording_id': Value('int64'),
+        'duration': Value('float64'),
+    })
+    dataset = Dataset.from_list(records, features=features)
     
     # Save to disk for caching
     dataset.save_to_disk(str(dataset_path))

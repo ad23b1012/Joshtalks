@@ -1,0 +1,51 @@
+word,spelling,confidence,reason
+कहलो,incorrect,low,Not found in any dictionary or pattern
+कैराम,incorrect,low,Not found in any dictionary or pattern
+माध्यम।,incorrect,low,Not found in any dictionary or pattern
+वोकेलबरी,incorrect,low,Not found in any dictionary or pattern
+सॉल्टी,incorrect,low,Not found in any dictionary or pattern
+मैलापन,correct,low,Has valid Hindi suffix but root not in dictionary
+मेरी-मेरी,incorrect,low,Not found in any dictionary or pattern
+सब्र,incorrect,low,Not found in any dictionary or pattern
+ओटीटी,incorrect,low,Not found in any dictionary or pattern
+वोहा,incorrect,low,Not found in any dictionary or pattern
+व्यक्तिकत,incorrect,low,Not found in any dictionary or pattern
+लगाई।,incorrect,low,Not found in any dictionary or pattern
+मेंलेवर,incorrect,low,Not found in any dictionary or pattern
+अनुभुवो,incorrect,low,Not found in any dictionary or pattern
+हैयह,incorrect,low,Not found in any dictionary or pattern
+वैकेनिक,incorrect,low,Not found in any dictionary or pattern
+अक्वार्ड,incorrect,low,Not found in any dictionary or pattern
+बटकाता,correct,low,Has valid Hindi suffix but root not in dictionary
+एक्सटिमेंट,incorrect,low,Not found in any dictionary or pattern
+दयत,incorrect,low,Not found in any dictionary or pattern
+सबकार,incorrect,low,Not found in any dictionary or pattern
+एब्जॉर्ब,incorrect,low,Not found in any dictionary or pattern
+लिंक्ड,incorrect,low,Not found in any dictionary or pattern
+सुधारते,correct,low,Has valid Hindi suffix but root not in dictionary
+पकेरा,incorrect,low,Not found in any dictionary or pattern
+निरस्ट,incorrect,low,Not found in any dictionary or pattern
+"बन,",incorrect,low,Not found in any dictionary or pattern
+प्रशिक्ता,correct,low,Has valid Hindi suffix but root not in dictionary
+पावंदिया,correct,low,Has valid Hindi suffix but root not in dictionary
+न्यूनियन,incorrect,low,Not found in any dictionary or pattern
+चरली,correct,low,Has valid Hindi suffix but root not in dictionary
+आँछी,incorrect,low,Not found in any dictionary or pattern
+इंसिस्ट,incorrect,low,Not found in any dictionary or pattern
+नमियों,correct,low,Has valid Hindi suffix but root not in dictionary
+समरम,incorrect,low,Not found in any dictionary or pattern
+"बुलाती,",incorrect,low,Not found in any dictionary or pattern
+करोड़ी,incorrect,low,Not found in any dictionary or pattern
+काहो,incorrect,low,Not found in any dictionary or pattern
+इंग्लेंड,incorrect,low,Not found in any dictionary or pattern
+बोर्च,incorrect,low,Not found in any dictionary or pattern
+पेरेन्टस,incorrect,low,Not found in any dictionary or pattern
+आदमिनिट,incorrect,low,Not found in any dictionary or pattern
+एलोबोरेट,incorrect,low,Not found in any dictionary or pattern
+पीकाचू,incorrect,low,Not found in any dictionary or pattern
+उजाकर,correct,low,Has valid Hindi suffix but root not in dictionary
+बेवी,incorrect,low,Not found in any dictionary or pattern
+रहुंगी,correct,low,Has valid Hindi suffix but root not in dictionary
+चीचीजों,correct,low,Has valid Hindi suffix but root not in dictionary
+रिखान,incorrect,low,Not found in any dictionary or pattern
+एक्सवल,incorrect,low,Not found in any dictionary or pattern

@@ -73,6 +73,8 @@ python notebooks/Q3_Spell_Checker.py
 python notebooks/Q4_Lattice_WER.py
 ```
 
+> **Note for Windows Users**: Ensure your console supports UTF-8 for Hindi text by running `$env:PYTHONUTF8 = "1"` in PowerShell before executing the scripts.
+
 ### 3. Or Run Individual Modules
 
 ```bash
@@ -125,9 +127,20 @@ python -m src.lattice_wer           # Lattice WER demo
 | Component | Requirement |
 |-----------|-------------|
 | Python | 3.10+ |
-| GPU | NVIDIA RTX 4060+ (8GB VRAM) for Q1 training |
+| GPU | NVIDIA RTX 4050+ (6GB VRAM) for Q1 training |
 | RAM | 16GB+ recommended |
 | Storage | ~20GB for audio data + model checkpoints |
+
+---
+
+## 🪟 Windows & RTX 4050 Notes
+
+If running this project on a Windows machine with a 6GB VRAM GPU (like the RTX 4050), the following adjustments are required and have been implemented in this environment:
+
+1. **VRAM Optimization**: `config.py` batch sizes are reduced (`TRAIN_BATCH_SIZE=4`, `EVAL_BATCH_SIZE=2`) to fit training inside 6GB without OOM errors.
+2. **Audio Processing Library Fixes**: The `torchcodec` library fails on Windows due to FFmpeg DLL issues. We downgraded the HF library to `datasets==2.21.0` and explicitly ran `pip uninstall torchcodec` to force the HuggingFace pipeline to safely fallback to `soundfile`.
+3. **Hindi Encoding**: Set `$env:PYTHONUTF8="1"` when running the scripts in Windows PowerShell to prevent `UnicodeEncodeError` when the scripts print Hindi Devanagari characters to the terminal.
+4. **Notebook Re-runs**: To rerun inference without automatically triggering the 4.5-hour Q1 training again, comment out the `train()` call in the Q1 notebook after the first successful run.
 
 ---
 

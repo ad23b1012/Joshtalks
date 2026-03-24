@@ -54,7 +54,7 @@ TASK = "transcribe"
 SAMPLE_RATE = 16000
 MAX_INPUT_LENGTH = 30.0  # seconds — Whisper's max context window
 
-# ─── Training Hyperparameters (optimized for RTX 4060 8GB) ──────────
+# ─── Training Hyperparameters (optimized for RTX 4050 6GB) ──────────
 TRAIN_BATCH_SIZE = 4  # Reduced from 8 for RTX 4050 (6GB VRAM)
 EVAL_BATCH_SIZE = 2   # Reduced from 4 for RTX 4050 (6GB VRAM)
 GRADIENT_ACCUMULATION_STEPS = 2  # effective batch = 16

@@ -115,7 +115,7 @@ eval_dataset = split['test']
 print(f"Train: {len(train_dataset)} | Eval: {len(eval_dataset)}")
 
 # Start training
-# trainer, processor = train(train_dataset, eval_dataset)
+trainer, processor = train(train_dataset, eval_dataset)
 
 # %% [markdown]
 # ## 1c. WER Evaluation on FLEURS Hindi

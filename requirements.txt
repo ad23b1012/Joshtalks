@@ -1,0 +1,36 @@
+# Core ML
+torch>=2.1.0
+torchaudio>=2.1.0
+transformers>=4.36.0
+datasets>=2.16.0
+accelerate>=0.25.0
+evaluate>=0.4.0
+
+# Audio processing
+librosa>=0.10.0
+soundfile>=0.12.0
+
+# Metrics
+jiwer>=3.0.0
+
+# Data handling
+pandas>=2.0.0
+numpy>=1.24.0
+aiohttp>=3.9.0
+aiofiles>=23.2.0
+requests>=2.31.0
+
+# NLP / Indic
+indic-transliteration>=2.3.0
+pyspellchecker>=0.8.0
+
+# Visualization & notebooks
+matplotlib>=3.7.0
+seaborn>=0.13.0
+tqdm>=4.66.0
+ipywidgets>=8.1.0
+jupyter>=1.0.0
+
+# Optimization for RTX 4060
+bitsandbytes>=0.41.0
+peft>=0.7.0
